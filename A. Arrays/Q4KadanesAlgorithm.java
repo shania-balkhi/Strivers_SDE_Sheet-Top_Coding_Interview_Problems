@@ -18,3 +18,23 @@ class Solution {
 }
 
 // **********************************************************************
+
+//striver code 2
+//better approach
+// TC : O(N^2) ; because we are running 2 loops
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int sum, max = Integer.MIN_VALUE;
+        for(int i = 0; i < nums.length; ++i){
+            sum = 0;
+            for(int j = i; j < nums.length; ++j){
+                sum += nums[j];
+
+                max = Math.max(sum, max);
+            }
+        }
+        return max;
+    }
+}
+
+// ***************************************************************************
